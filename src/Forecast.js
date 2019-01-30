@@ -9,8 +9,8 @@ class Forecast extends React.Component {
         }
     }
 
-    componentDidMount() {
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DS_API_KEY}/${this.props.lat},${this.props.lng}/?units=us&exclude=hourly`)
+    fetchData(lat, lng) {
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DS_API_KEY}/${lat},${lng}/?units=us&exclude=hourly`)
         .then((response) => response.json())
         .then((json) => {
             this.setState({
@@ -18,6 +18,17 @@ class Forecast extends React.Component {
                 data: json,
             })
         })
+        console.log('fetching dsky data');
+    }
+
+    componentDidMount() {
+        this.fetchData(this.props.lat, this.props.lng);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.lat !== prevProps.lat || this.props.lng !== prevProps.lng) {
+            this.fetchData(this.props.lat, this.props.lng);
+        }
     }
 
     render() {
