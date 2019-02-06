@@ -1,24 +1,13 @@
 import React from 'react';
+import './search.css'
 
-class SearchForm extends React.Component {
-    // constrcutor(props) {
-    //     super(props);
-    //     this.state = {
-
-    //     }
-    // }
-
-
-    render() {
-        return (
-            <form onSubmit={this.props.handleSubmit}>
-                <label>Input location for weather forecast:</label>
-                <input type="search" value={this.props.searchValue} onChange={this.props.handleSearchInput} />
-                <input type="submit" value="Submit" />
-            </form>
-
-        );
-    }
-}
+const SearchForm = (props) => (
+    <form onSubmit={props.handleSubmit}>
+        <label>Weather Forecast Search</label>
+        <input type="search" value={props.searchValue} onChange={props.handleSearchInput} placeholder="City, State" />
+        <input type="submit" value="Submit" />
+        <p>US Locations Only</p>
+    </form>
+)
 
 export default SearchForm;

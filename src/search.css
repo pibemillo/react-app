@@ -1,0 +1,45 @@
+form {
+    max-width: 620px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    background:rgba(255,255,255, .95);
+    color: #284157;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0, .25) 2px 2px 15px;
+}
+
+form > p {
+    font-size: 10px;
+    text-align: center;
+}
+
+input[type="search"] {
+    padding: 20px 10px;
+    border-radius: 5px 0px 0 5px;
+    border: 1px solid #EEE;
+    border-right: none;
+    width: 80%;
+    margin-top: 20px;
+    font-family: quicksand;
+    font-weight: 600;
+}
+
+input[type="submit"] {
+    padding: 20px 10px;
+    width: 20%;
+    border: none;
+    background: #284157;
+    color: white;
+    text-transform: uppercase;
+    font-family: quicksand;
+    font-weight: 300;
+    border-radius: 0 5px 5px 0;
+}
+
+label {
+    display: block;
+    text-align: center;
+}

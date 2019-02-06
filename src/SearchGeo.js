@@ -13,10 +13,15 @@ class SearchGeo extends React.Component {
         country: '',
         lat: '',
         lng: '',
+        searchQuery: ''
     }
 
     handleSubmit = event => {
         event.preventDefault();
+        let searchQuery = this.state.value;
+        this.setState({
+            searchQuery
+        })
         this.getLatLong(this.state.value);
     };
 
@@ -31,6 +36,9 @@ class SearchGeo extends React.Component {
         .then((response) => {
             if(!response.ok) {
                 console.log(response.statusText);
+                this.setState({
+                    submitted: true,
+                })
             }
             else {
                 // console.log(response)
@@ -55,41 +63,22 @@ class SearchGeo extends React.Component {
     render() {
         if(this.state.submitted) {
 
-            // var { data } = this.state;
-
-            // var {
-            //     results: [
-            //         {
-            //             address_components: {
-            //                 city,
-            //                 state,
-            //                 country
-            //             },
-            //             location: {
-            //                 lat,
-            //                 lng
-            //             }
-            //         }
-            //     ]
-            // } = data || {}
-
             return (
                 <div>
                     <SearchForm handleSubmit={this.handleSubmit} searchValue={this.state.value} getLatLong={this.getLatLong} handleSearchInput={this.handleSearchInput}/>
                     {/* <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre> */}
-                    <h1>RESULTS for {this.state.city}, {this.state.state}, {this.state.country}</h1>
+
+                    {this.state.city && this.state.state && this.state.country
+                        ? <h1>{this.state.city}, {this.state.state}, {this.state.country}</h1>
+                        : <h1>Could not find weather for {this.state.searchQuery}</h1>
+                    }
+
                     <Forecast lat={this.state.lat} lng={this.state.lng} />
                 </div>
             );
         }
 
         return (
-            // <form onSubmit={this.handleSubmit}>
-            //     <label>Input location for weather forecast:</label>
-            //     <input type="search" value={this.state.value} onChange={this.handleSearchInput} />
-            //     <input type="submit" value="Submit" />
-            // </form>
-
             <SearchForm handleSubmit={this.handleSubmit} searchValue={this.state.value} getLatLong={this.getLatLong} handleSearchInput={this.handleSearchInput}/>
         );
     }
