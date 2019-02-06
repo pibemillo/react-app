@@ -3,7 +3,7 @@ form {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     padding: 10px;
     background:rgba(255,255,255, .95);
     color: #284157;
@@ -39,7 +39,27 @@ input[type="submit"] {
     border-radius: 0 5px 5px 0;
 }
 
+input[type="submit"]:hover {
+    opacity: .8;
+    transition: all .5s ease-out;
+}
+
 label {
     display: block;
     text-align: center;
+}
+
+@media only screen
+  /* and (min-device-width: 768px) */
+  and (max-device-width: 900px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    input[type="search"] {
+        width: 70%;
+    }
+
+    input[type="submit"] {
+        width: 30%;
+    }
+
 }

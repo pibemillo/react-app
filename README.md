@@ -1,3 +1,13 @@
+# React Weather App
+
+Built with [Dark Sky API](https://darksky.net), [Geocodio](http://geocod.io), [React-Skycons](https://github.com/roadmanfong/react-skycons), React-router and deployed with [Now](https://zeit.co/now).
+
+App allows you to:
+1. Search for 8-day weather forecast for US locations.
+2. Check forecast for all mountains on season passes: [Mountain Collective](https://mountaincollective.com/) and [Ikon Pass](https://www.ikonpass.com/).
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

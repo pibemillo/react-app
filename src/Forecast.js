@@ -17,7 +17,7 @@ class Forecast extends React.Component {
             fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.REACT_APP_DS_API_KEY}/${lat},${lng}/?units=us&exclude=hourly`)
             .then((response) => {
                 if(!response.ok) {
-                    console.log(response.statusText);
+                    // console.log(response.statusText);
                     this.setState({
                         isLoaded: false
                     })
@@ -29,12 +29,12 @@ class Forecast extends React.Component {
                             data: json,
                         })
                     })
-                    console.log('fetching dsky data');
+                    // console.log('fetching dsky data');
                 }
             })
         }
         else {
-            console.log('no lat, lng');
+            // console.log('no lat, lng');
             this.setState({
                 isLoaded: false,
             })
@@ -60,7 +60,7 @@ class Forecast extends React.Component {
 
         if (!isLoaded) {
             return (
-                <p>Loading data from DarkSky or API limit has been reaced for daily free usage (try again mañana).</p>
+                <p className="text-center">Loading data from DarkSky or API limit has been reaced for daily free usage (try again mañana).</p>
             )
         }
         else {

@@ -1,3 +1,7 @@
+.forecast-container {
+    margin-bottom: 75px;
+}
+
 .forecast-container >p {
     font-size: 20px;
     margin-bottom: 40px;
@@ -7,6 +11,7 @@
 .forecast {
     display: flex;
     margin: 0;
+    padding-left: 0;
 }
 
 
@@ -22,8 +27,19 @@
 }
 
 @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
+  /* and (min-device-width: 768px) */
+  and (max-device-width: 900px)
   and (-webkit-min-device-pixel-ratio: 1) {
+
+    .forecast {
+        overflow-x: scroll;
+        overflow-y: visible;
+    }
+
+    .forecast > li {
+        flex-basis: 25%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
 
 }

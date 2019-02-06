@@ -14,9 +14,6 @@ const Header = () =>(
             <li>
                 <Link to="/ikon">IKON Pass</Link>
             </li>
-            <li>
-                <Link to="/epic">Epic Pass</Link>
-            </li>
         </ul>
     </nav>
 )

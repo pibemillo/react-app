@@ -69,11 +69,15 @@ class SearchGeo extends React.Component {
                     {/* <pre><code>{JSON.stringify(this.state.data, null, 4)}</code></pre> */}
 
                     {this.state.city && this.state.state && this.state.country
-                        ? <h1>{this.state.city}, {this.state.state}, {this.state.country}</h1>
-                        : <h1>Could not find weather for {this.state.searchQuery}</h1>
+                        ?
+                        <div>
+                            <h1 className="text-center">{this.state.city}, {this.state.state}, {this.state.country}</h1>
+                            <Forecast lat={this.state.lat} lng={this.state.lng} />
+                        </div>
+                        : <h1 className="text-center">Could not find weather for {this.state.searchQuery}</h1>
                     }
 
-                    <Forecast lat={this.state.lat} lng={this.state.lng} />
+
                 </div>
             );
         }
