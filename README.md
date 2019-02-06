@@ -6,6 +6,12 @@ App allows you to:
 1. Search for 8-day weather forecast for US locations.
 2. Check forecast for all mountains on season passes: [Mountain Collective](https://mountaincollective.com/) and [Ikon Pass](https://www.ikonpass.com/).
 
+[Deployment](https://facebook.github.io/create-react-app/docs/deployment):
+`npm run build`
+`cd build`
+`now --name react-weather-app`
+
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
